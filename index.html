@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wizz FZFG + VIS≤150m Alert Monitor</title>
+  <style>
+    :root{
+      --wizz-pink:#CC2788;
+      --wizz-purple:#711C90;
+      --wizz-blue:#0E1397;
+
+      --bg:#060818;
+      --panel: rgba(16, 20, 46, .90);
+      --panel2: rgba(10, 14, 34, .92);
+      --text:#F3F5FF;
+      --muted:#A9B2D6;
+      --line: rgba(105, 120, 190, .22);
+
+      --ok:#22c55e;
+      --warn:#f59e0b;
+      --crit:#ef4444;
+      --info:#38bdf8;
+
+      --shadow: 0 18px 55px rgba(0,0,0,.38);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 10% 10%, rgba(204,39,136,.35), transparent 60%),
+        radial-gradient(900px 500px at 90% 20%, rgba(14,19,151,.28), transparent 60%),
+        radial-gradient(900px 500px at 40% 90%, rgba(113,28,144,.22), transparent 55%),
+        linear-gradient(180deg, #050717, var(--bg));
+      min-height:100vh;
+    }
+    header{
+      position:sticky; top:0; z-index:20;
+      padding:16px 18px;
+      border-bottom:1px solid var(--line);
+      background: rgba(6,8,24,.72);
+      backdrop-filter: blur(10px);
+    }
+    .topbar{
+      max-width: 1700px;
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .brand{display:flex; gap:12px; align-items:flex-start;}
+    .mark{
+      width:14px; height:44px; border-radius:10px;
+      background: linear-gradient(180deg, var(--wizz-pink), var(--wizz-blue));
+      box-shadow: 0 0 22px rgba(204,39,136,.25);
+    }
+    h1{margin:0;font-size:22px;font-weight:950;letter-spacing:.2px;line-height:1.2;}
+    .subtitle{
+      margin-top:6px;color:var(--muted);font-size:14px;line-height:1.4;max-width: 1000px;
+    }
+    .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    button, input{font-family: inherit;}
+    button{
+      background: rgba(16,20,46,.85);
+      border: 1px solid var(--line);
+      color: var(--text);
+      padding: 9px 12px;
+      border-radius: 12px;
+      cursor:pointer;
+      font-weight:900;
+      letter-spacing:.2px;
+      box-shadow: 0 10px 26px rgba(0,0,0,.22);
+    }
+    button:hover{filter:brightness(1.08)}
+    button.primary{
+      background: linear-gradient(135deg, rgba(204,39,136,.85), rgba(14,19,151,.55));
+      border-color: rgba(204,39,136,.35);
+    }
+    button.danger{
+      background: rgba(239,68,68,.18);
+      border-color: rgba(239,68,68,.45);
+    }
+    button:disabled{opacity:.55; cursor:not-allowed}
+
+    main{max-width:1700px;margin:0 auto;padding:16px 18px}
+    .kpis{
+      display:grid;
+      grid-template-columns: repeat(6, minmax(0,1fr));
+      gap:12px;
+      margin-bottom:12px;
+    }
+    .card{
+      background: var(--panel);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:12px 14px;
+      box-shadow: var(--shadow);
+    }
+    .kpiLabel{color:var(--muted); font-size:12px; font-weight:900}
+    .kpiValue{margin-top:6px; font-size:34px; font-weight:980}
+    .kpiValue.small{font-size:12px; font-weight:800; line-height:1.35; color:var(--muted)}
+    .pill{
+      display:inline-block;
+      padding:3px 10px;border-radius:999px;
+      background: rgba(204,39,136,.16);
+      border:1px solid rgba(204,39,136,.35);
+      color: var(--text);
+      font-weight:950;font-size:11px;
+      margin-left:8px;vertical-align:middle;
+    }
+    .pill.info{background: rgba(56,189,248,.12); border-color: rgba(56,189,248,.32);}
+    .pill.warn{background: rgba(245,158,11,.14); border-color: rgba(245,158,11,.38);}
+
+    .panel{
+      background: var(--panel2);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:12px 14px;
+      box-shadow: var(--shadow);
+      margin-bottom:12px;
+    }
+    .panelHeader{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; flex-wrap:wrap; margin-bottom:10px;
+    }
+    .panelHeader h2{margin:0;font-size:13px;font-weight:980; letter-spacing:.2px}
+    .muted{color:var(--muted)}
+    .small{font-size:12px}
+
+    input{
+      background: rgba(6,8,24,.85);
+      border:1px solid var(--line);
+      color: var(--text);
+      padding:9px 10px;
+      border-radius: 12px;
+      outline:none;
+      min-width: 220px;
+    }
+    select{
+      background: rgba(6,8,24,.85);
+      border:1px solid var(--line);
+      color: var(--text);
+      padding:9px 10px;
+      border-radius: 12px;
+      outline:none;
+      min-width: 240px;
+      appearance: none;
+    }
+    .toggle{
+      display:flex; gap:8px; align-items:center;
+      padding:7px 10px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(6,8,24,.55);
+      color: var(--muted);
+      font-size:12px;
+      font-weight:900;
+      user-select:none;
+    }
+    .toggle input{ min-width:auto; }
+
+
+    table{width:100%;border-collapse:collapse;font-size:12px}
+    th,td{border-top:1px solid rgba(105,120,190,.18);padding:10px 8px;vertical-align:top;}
+    th{color:var(--muted); font-weight:950; text-align:left}
+    .raw{white-space:pre-wrap;word-break:break-word;color:#D7DEF8;max-width:760px;}
+    .badge{
+      display:inline-block;padding:4px 9px;border-radius:999px;
+      font-weight:980;font-size:11px;letter-spacing:.2px;
+    }
+    .badge.ok{background:rgba(34,197,94,.14); border:1px solid rgba(34,197,94,.38)}
+    .badge.warn{background:rgba(245,158,11,.14); border:1px solid rgba(245,158,11,.42)}
+    .badge.crit{background:rgba(239,68,68,.14); border:1px solid rgba(239,68,68,.48)}
+
+    .toast{
+      position:fixed; right:18px; bottom:18px; max-width:720px;
+      background: rgba(6,8,24,.92);
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding:12px 14px;
+      box-shadow: 0 18px 55px rgba(0,0,0,.45);
+      display:none;
+    }
+    .flash{ animation: flashGlow 1s infinite; }
+    @keyframes flashGlow{
+      0%{ box-shadow: 0 0 0 rgba(239,68,68,0); }
+      50%{ box-shadow: 0 0 28px rgba(239,68,68,.30); }
+      100%{ box-shadow: 0 0 0 rgba(239,68,68,0); }
+    }
+    @media (max-width:1200px){
+      .kpis{grid-template-columns: repeat(2, minmax(0,1fr));}
+      input{min-width: 160px;}
+      select{min-width: 180px;}
+    }
+  
+    .hl{
+      padding:1px 6px;
+      border-radius:8px;
+      font-weight:980;
+      display:inline-block;
+      margin:1px 0;
+    }
+    .hl-fzfg{
+      background: rgba(204,39,136,.22);
+      border:1px solid rgba(204,39,136,.45);
+      color: var(--text);
+    }
+    .hl-vis{
+      background: rgba(245,158,11,.18);
+      border:1px solid rgba(245,158,11,.45);
+      color: var(--text);
+    }
+    .hl-trigger{
+      background: rgba(239,68,68,.18);
+      border:1px solid rgba(239,68,68,.50);
+    }
+    .age{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:950;
+      font-size:12px;
+      border:1px solid var(--line);
+      background: rgba(6,8,24,.55);
+      color: var(--muted);
+      white-space:nowrap;
+    }
+    .age.stale{
+      background: rgba(239,68,68,.18);
+      border-color: rgba(239,68,68,.48);
+      color: var(--text);
+    }
+
+  </style>
+</head>
+<body>
+<header id="hdr">
+  <div class="topbar">
+    <div class="brand">
+      <div class="mark" aria-hidden="true"></div>
+      <div>
+        <h1>FZFG + Visibility ≤ 150 m Alert Monitor</h1>
+        <div class="subtitle">
+          GitHub Pages + GitHub Actions. The Action rebuilds <code>data/status.json</code> every 5 minutes.
+          <b>CRITICAL</b> = METAR (FZFG + VIS≤150m). <b>WARNING</b> = TAF segment (FZFG + VIS≤150m).
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <button id="btnSound" class="primary">Sound: OFF</button>
+      <button id="btnAck" class="danger" disabled>ACK (mute until cleared)</button>
+      <button id="btnNow">Refresh</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="kpis">
+    <div class="card">
+      <div class="kpiLabel">CRITICAL (METAR)</div>
+      <div class="kpiValue" id="kCrit">0</div>
+    </div>
+    <div class="card">
+      <div class="kpiLabel">WARNING (TAF)</div>
+      <div class="kpiValue" id="kWarn">0</div>
+    </div>
+    <div class="card">
+      <div class="kpiLabel">OK</div>
+      <div class="kpiValue" id="kOk">0</div>
+    </div>
+    <div class="card">
+      <div class="kpiLabel">Monitored stations</div>
+      <div class="kpiValue" id="kStations">—</div>
+      <div class="kpiValue small" id="kStationsHint"></div>
+    </div>
+    <div class="card">
+      <div class="kpiLabel">Last data update (UTC)</div>
+      <div class="kpiValue small" id="kTs">—</div>
+    </div>
+    <div class="card">
+      <div class="kpiLabel">Data source</div>
+      <div class="kpiValue small" id="kSrc">—</div>
+    </div>
+</section>
+
+  <section class="panel">
+    <div class="panelHeader">
+      <h2>Status table</h2>
+      <div class="row">
+        <input id="filter" placeholder="Filter (ICAO)..." />
+        <select id="alertFilter" title="Filter by alert level">
+          <option value="all">All</option>
+          <option value="alerts">Alerts only (CRITICAL + WARNING)</option>
+          <option value="critical">CRITICAL only</option>
+          <option value="warning">WARNING only</option>
+          <option value="ok">OK only</option>
+        </select>
+        <select id="condFilter" title="Filter by condition">
+          <option value="all">All conditions</option>
+          <option value="watch">Watchlist: FZFG OR VIS≤150</option>
+          <option value="fzfg">FZFG present</option>
+          <option value="lowvis">VIS≤150 present</option>
+          <option value="both">FZFG AND VIS≤150</option>
+        </select>
+        <label class="toggle">
+          <input id="sortPriority" type="checkbox" checked />
+          <span>Sort by priority</span>
+        </label>
+        <input id="extra" placeholder="Extra ICAO (browser-only)" title="Stored in your browser only" />
+      </div>
+    </div>
+    <div class="muted small" style="margin-bottom:10px">
+      If you see <b>0 monitored stations</b>, the workflow did not write <code>data/status.json</code> yet.
+      Check Actions logs and ensure Actions has <b>Read and write</b> permissions for the repository.
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ICAO</th>
+          <th>Alert</th>
+          <th>Vis (m)</th>
+          <th>FZFG</th>
+          <th>Low VIS ≤150</th>
+          <th>Triggers</th>
+          <th>METAR age</th>
+          <th>TAF age</th>
+          <th>METAR (raw)</th>
+          <th>TAF (raw)</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </section>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  const LS_EXTRA = "wizz_fzfg_extra_icao";
+  const DATA_URL = new URL("./data/status.json", window.location.href).toString();
+  const el = (id) => document.getElementById(id);
+
+  let state = {
+    soundOn: false,
+    acked: false,
+    alarmTimer: null,
+    prevAlerts: new Map(),
+    lastPayload: null
+  };
+
+  function toast(html) {
+    const t = el("toast");
+    t.innerHTML = html;
+    t.style.display = "block";
+    setTimeout(() => t.style.display = "none", 6500);
+  }
+
+  function badge(level) {
+    const cls = level === "CRITICAL" ? "crit" : (level === "WARNING" ? "warn" : "ok");
+    return `<span class="badge ${cls}">${level}</span>`;
+  }
+
+  function normalizeIcaoList(text) {
+    return (text || "")
+      .toUpperCase()
+      .split(/[,;\n\r\t ]+/)
+      .map(s => s.trim())
+      .filter(s => s.length === 4 && /^[A-Z]{4}$/.test(s));
+  }
+
+  function beepOnce() {
+    if (!state.soundOn) return;
+    try {
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const o = ctx.createOscillator();
+      const g = ctx.createGain();
+      o.type = "square";
+      o.frequency.value = 880;
+      o.connect(g); g.connect(ctx.destination);
+      g.gain.value = 0.06;
+      o.start();
+      setTimeout(() => { o.stop(); ctx.close(); }, 550);
+    } catch (e) {}
+  }
+
+  function startAlarmLoop() {
+    if (state.alarmTimer) return;
+    state.alarmTimer = setInterval(() => {
+      if (!state.acked) beepOnce();
+    }, 7000);
+  }
+  function stopAlarmLoop() {
+    if (state.alarmTimer) clearInterval(state.alarmTimer);
+    state.alarmTimer = null;
+  }
+  function setHeaderFlash(on) {
+    const hdr = el("hdr");
+    if (on) hdr.classList.add("flash"); else hdr.classList.remove("flash");
+  }
+
+  
+  const METAR_STALE_MIN = 90;   // METAR age threshold
+  const TAF_STALE_MIN   = 12 * 60;
+
+  function escapeHtml(s){
+    return String(s || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  function parseDDHHMMZ(raw){
+    const m = String(raw || "").match(/\b(\d{2})(\d{2})(\d{2})Z\b/);
+    if (!m) return null;
+    return { dd: parseInt(m[1],10), hh: parseInt(m[2],10), mm: parseInt(m[3],10) };
+  }
+
+  function toUtcDateFromDDHHMM(nowUtc, ddhhmm){
+    if (!ddhhmm) return null;
+    const y = nowUtc.getUTCFullYear();
+    const mo = nowUtc.getUTCMonth();
+    let dt = new Date(Date.UTC(y, mo, ddhhmm.dd, ddhhmm.hh, ddhhmm.mm, 0));
+    const diffMs = dt.getTime() - nowUtc.getTime();
+    if (diffMs > 12*3600*1000){
+      dt = new Date(Date.UTC(y, mo-1, ddhhmm.dd, ddhhmm.hh, ddhhmm.mm, 0));
+    } else if ((-diffMs) > 25*24*3600*1000){
+      dt = new Date(Date.UTC(y, mo+1, ddhhmm.dd, ddhhmm.hh, ddhhmm.mm, 0));
+    }
+    return dt;
+  }
+
+  function ageMinutes(nowUtc, raw){
+    const ddhhmm = parseDDHHMMZ(raw);
+    if (!ddhhmm) return null;
+    const dt = toUtcDateFromDDHHMM(nowUtc, ddhhmm);
+    if (!dt) return null;
+    const age = Math.floor((nowUtc.getTime() - dt.getTime()) / 60000);
+    return (age >= 0 && age < 60*48) ? age : null;
+  }
+
+  function renderAgeBadge(mins, staleLimit){
+    if (mins === null || mins === undefined) return '<span class="age">—</span>';
+    const stale = mins > staleLimit;
+    const cls = stale ? "age stale" : "age";
+    return `<span class="${cls}">${mins}m${stale ? " STALE" : ""}</span>`;
+  }
+
+  function highlightFzfg(htmlEsc){
+    return htmlEsc.replace(/\bFZFG\b/g, '<span class="hl hl-fzfg">FZFG</span>');
+  }
+
+  function highlightLowVis(htmlEsc){
+    // highlight only 4-digit meter vis <=150, avoid validity windows like 1812/1912
+    return htmlEsc.replace(/(^|[^\/])\b(\d{4})\b(?!\/)/g, (m, p1, p2) => {
+      const n = parseInt(p2, 10);
+      if (!Number.isNaN(n) && n <= 150){
+        return `${p1}<span class="hl hl-vis">${p2}</span>`;
+      }
+      return `${p1}${p2}`;
+    });
+  }
+
+  function highlightTriggeredRaw(s){
+    const metRaw = escapeHtml(s.metar || "");
+    const tafRaw = escapeHtml(s.taf || "");
+
+    const metHighlighted = (() => {
+      let x = metRaw;
+      if (hasFzfg(s)) x = highlightFzfg(x);
+      if (hasLowVis150(s)) x = highlightLowVis(x);
+      if (s.metar_trigger) x = x.replace(/<span class="hl hl-fzfg">FZFG<\/span>/g, '<span class="hl hl-fzfg hl-trigger">FZFG</span>');
+      return x;
+    })();
+
+    const tafHighlighted = (() => {
+      let x = tafRaw;
+      if (hasFzfg(s)) x = highlightFzfg(x);
+      if (hasLowVis150(s)) x = highlightLowVis(x);
+      if (s.taf_trigger) x = x.replace(/<span class="hl hl-fzfg">FZFG<\/span>/g, '<span class="hl hl-fzfg hl-trigger">FZFG</span>');
+      return x;
+    })();
+
+    return { metHighlighted, tafHighlighted };
+  }
+
+  function triggersText(s) {
+    const met = s.metar_trigger ? "METAR" : "";
+    const taf = s.taf_trigger ? "TAF" : "";
+    return [met, taf].filter(Boolean).join(" + ") || "—";
+  }
+
+  function render(payload) {
+    const q = (el("filter").value || "").trim().toUpperCase();
+    const extra = normalizeIcaoList(el("extra").value);
+    localStorage.setItem(LS_EXTRA, extra.join(" "));
+
+    let stations = payload?.stations || [];
+    for (const icao of extra) {
+      if (!stations.find(s => s.icao === icao)) {
+        stations = stations.concat([{ icao, alert: "OK", vis_m: null, fzfg: false, metar_trigger: false, taf_trigger: false, metar: "", taf: "" }]);
+      }
+    }
+
+    let crit=0, warn=0, ok=0;
+    let anyCritical=false;
+
+    const tbody = el("tbody");
+    tbody.innerHTML = "";
+
+    const alertFilter = (el("alertFilter")?.value || "all").toLowerCase();
+    const condFilter = (el("condFilter")?.value || "all").toLowerCase();
+    const sortByPriority = !!el("sortPriority")?.checked;
+
+    function scoreAlert(a){
+      const v = (a && a.alert) ? String(a.alert).toUpperCase() : "OK";
+      if (v === "CRITICAL") return 2;
+      if (v === "WARNING") return 1;
+      return 0;
+    }
+
+    function visToMeters(raw){
+      if (!raw) return null;
+      const s = String(raw);
+      if (s.includes("CAVOK")) return 9999;
+
+      // 4-digit meter vis, exclude TAF validity windows like 1812/1912
+      const m = s.match(/(^|[^/])\b(\d{4})\b(?!\/)/);
+      if (m && m[2]) return parseInt(m[2], 10);
+
+      // statute miles (rare)
+      const sm = s.match(/\b(M)?(\d+)?(?:\s?(\d)\/(\d))?SM\b/);
+      if (sm){
+        const whole = sm[2] ? parseFloat(sm[2]) : 0;
+        const frac = (sm[3] && sm[4]) ? (parseFloat(sm[3]) / parseFloat(sm[4])) : 0;
+        const miles = whole + frac;
+        if (miles > 0) return Math.round(miles * 1609.344);
+      }
+      return null;
+    }
+
+    function splitTafSegments(taf){
+      if (!taf) return [];
+      const s = String(taf).replace(/\s+/g, " ").trim();
+      const parts = s.split(/\b(FM\d{6}|BECMG|TEMPO|PROB\d{2})\b/);
+      const segs = [];
+      let cur = "";
+      for (const p of parts){
+        if (!p) continue;
+        if (/^(FM\d{6}|BECMG|TEMPO|PROB\d{2})$/.test(p)){
+          if (cur.trim()) segs.push(cur.trim());
+          cur = p;
+        } else {
+          cur = (cur + " " + p).trim();
+        }
+      }
+      if (cur.trim()) segs.push(cur.trim());
+      return segs;
+    }
+
+    function hasFzfg(s){
+      if (!s) return false;
+      if (s.fzfg) return true;
+      const met = String(s.metar || "");
+      const taf = String(s.taf || "");
+      return met.includes("FZFG") || taf.includes("FZFG");
+    }
+
+    function hasLowVis150(s){
+      if (!s) return false;
+
+      // METAR: prefer parsed vis_m, fallback to regex on raw
+      let mv = (s.vis_m === null || s.vis_m === undefined) ? null : Number(s.vis_m);
+      if (mv === null || Number.isNaN(mv)){
+        mv = visToMeters(s.metar || "");
+      }
+      if (mv !== null && mv <= 150) return true;
+
+      // TAF: check any segment for any explicit VIS <= 150 (no FZFG requirement)
+      const segs = splitTafSegments(s.taf || "");
+      for (const seg of segs){
+        const v = visToMeters(seg);
+        if (v !== null && v <= 150) return true;
+      }
+      return false;
+    }
+
+    function watchFlag(s){
+      return hasFzfg(s) || hasLowVis150(s);
+    }
+
+    function bothFlag(s){
+      return hasFzfg(s) && hasLowVis150(s);
+    }
+
+    let filtered = stations.slice();
+
+    // Alert-level filtering
+    filtered = filtered.filter(s => {
+      const lvl = String(s.alert || "OK").toUpperCase();
+      if (alertFilter === "all") return true;
+      if (alertFilter === "alerts") return (lvl === "CRITICAL" || lvl === "WARNING");
+      if (alertFilter === "critical") return lvl === "CRITICAL";
+      if (alertFilter === "warning") return lvl === "WARNING";
+      if (alertFilter === "ok") return lvl === "OK";
+      return true;
+    });
+
+    // Condition filtering
+    filtered = filtered.filter(s => {
+      if (condFilter === "all") return true;
+      if (condFilter === "watch") return watchFlag(s);
+      if (condFilter === "fzfg") return hasFzfg(s);
+      if (condFilter === "lowvis") return hasLowVis150(s);
+      if (condFilter === "both") return bothFlag(s);
+      return true;
+    });
+
+    const sorted = filtered.sort((a,b) => {
+      // Always bring "watchlist" to the top (either criterion holds)
+      const aw = watchFlag(a) ? 1 : 0;
+      const bw = watchFlag(b) ? 1 : 0;
+      if (aw !== bw) return bw - aw;
+
+      if (sortByPriority){
+        // Then CRITICAL > WARNING > OK
+        const d = scoreAlert(b) - scoreAlert(a);
+        if (d !== 0) return d;
+
+        // Then lower visibility first (if available)
+        const av = (a.vis_m === null || a.vis_m === undefined) ? 1e12 : Number(a.vis_m);
+        const bv = (b.vis_m === null || b.vis_m === undefined) ? 1e12 : Number(b.vis_m);
+        if (av !== bv) return av - bv;
+
+        // Then METAR trigger first, then TAF trigger
+        const am = a.metar_trigger ? 1 : 0;
+        const bm = b.metar_trigger ? 1 : 0;
+        if (am !== bm) return bm - am;
+
+        const at = a.taf_trigger ? 1 : 0;
+        const bt = b.taf_trigger ? 1 : 0;
+        if (at !== bt) return bt - at;
+      }
+
+      return (a.icao||"").localeCompare(b.icao||"");
+    });
+
+    for (const s of sorted) {
+      if (q && !(s.icao || "").includes(q)) continue;
+
+      if (s.alert === "CRITICAL") { crit++; anyCritical=true; }
+      else if (s.alert === "WARNING") warn++;
+      else ok++;
+
+      const vis = (s.vis_m === null || s.vis_m === undefined) ? "—" : String(s.vis_m);
+      const fz = (hasFzfg(s)) ? "YES" : "—";
+      const lv = (hasLowVis150(s)) ? "YES" : "—";
+
+      const nowUtc = new Date(payload?.ts_utc || new Date().toISOString());
+      const metAge = ageMinutes(nowUtc, s.metar || "");
+      const tafAge = ageMinutes(nowUtc, s.taf || "");
+
+      const raw = highlightTriggeredRaw(s);
+
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td><b>${s.icao}</b></td>
+        <td>${badge(s.alert || "OK")}</td>
+        <td>${vis}</td>
+        <td>${fz}</td>
+        <td>${lv}</td>
+        <td>${triggersText(s)}</td>
+        <td>${renderAgeBadge(metAge, METAR_STALE_MIN)}</td>
+        <td>${renderAgeBadge(tafAge, TAF_STALE_MIN)}</td>
+        <td class="raw">${raw.metHighlighted}</td>
+        <td class="raw">${raw.tafHighlighted}</td>
+      `;
+      tbody.appendChild(tr);
+    }
+
+    const stationCount = payload?.station_count ?? 0;
+    el("kCrit").textContent = crit;
+    el("kWarn").textContent = warn;
+    el("kOk").textContent = ok;
+
+    el("kStations").innerHTML = `${stationCount} <span class="pill info">from status.json</span>`;
+    el("kStationsHint").innerHTML =
+      stationCount === 0
+        ? `<span class="pill warn">No stations in payload</span> Add ICAOs to <code>data/stations_override.txt</code> or fix Actions permissions.`
+        : `You can still add ad-hoc ICAOs in the input field (browser-only).`;
+
+    el("kTs").textContent = payload?.ts_utc || "—";
+    el("kSrc").textContent = payload?.source || "—";
+for (const s of stations) {
+      const prev = state.prevAlerts.get(s.icao);
+      if (prev !== "CRITICAL" && s.alert === "CRITICAL") {
+        toast(`<b>CRITICAL</b> ${s.icao} — FZFG + VIS≤150m detected (METAR).`);
+        if (!state.acked) beepOnce();
+      }
+      state.prevAlerts.set(s.icao, s.alert);
+    }
+
+    if (anyCritical) {
+      setHeaderFlash(true);
+      document.title = "ALERT: FZFG + VIS≤150";
+      el("btnAck").disabled = false;
+      startAlarmLoop();
+    } else {
+      setHeaderFlash(false);
+      document.title = "Wizz FZFG + VIS≤150m Alert Monitor";
+      el("btnAck").disabled = true;
+      state.acked = false;
+      stopAlarmLoop();
+    }
+  }
+
+  async function load() {
+    try {
+      const r = await fetch(`${DATA_URL}?_=${Date.now()}`);
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const payload = await r.json();
+      state.lastPayload = payload;
+      render(payload);
+    } catch (e) {
+      toast(`<b>Data load error</b>: ${e.message || e}<br/><span class="muted small">Open ${DATA_URL} directly to confirm it exists.</span>`);
+    }
+  }
+
+  el("btnSound").addEventListener("click", () => {
+    state.soundOn = !state.soundOn;
+    el("btnSound").textContent = `Sound: ${state.soundOn ? "ON" : "OFF"}`;
+    if (state.soundOn) { beepOnce(); toast("Sound enabled."); }
+  });
+
+  el("btnAck").addEventListener("click", () => {
+    state.acked = true;
+    toast("ACK active: alarm muted until CRITICAL clears.");
+  });
+
+  el("btnNow").addEventListener("click", () => {
+    if (state.lastPayload) render(state.lastPayload);
+    load();
+  });
+
+  el("filter").addEventListener("input", () => { if (state.lastPayload) render(state.lastPayload); });
+  el("extra").addEventListener("change", () => { if (state.lastPayload) render(state.lastPayload); });
+  el("alertFilter").addEventListener("change", () => { if (state.lastPayload) render(state.lastPayload); });
+  el("condFilter").addEventListener("change", () => { if (state.lastPayload) render(state.lastPayload); });
+  el("sortPriority").addEventListener("change", () => { if (state.lastPayload) render(state.lastPayload); });
+
+  el("extra").value = localStorage.getItem(LS_EXTRA) || "";
+  load();
+  setInterval(load, 30000);
+</script>
+</body>
+</html>
