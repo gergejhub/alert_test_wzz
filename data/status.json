@@ -1,5 +1,5 @@
 {
-  "ts_utc": "2025-12-22T17:39:02Z",
+  "ts_utc": "2025-12-22T17:48:47Z",
   "threshold_m": 150,
   "source": "stations_override.txt (ICAO list) + aviationweather.gov (METAR/TAF raw)",
   "station_count": 159,
@@ -152,7 +152,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR EFTU 221720Z AUTO 07011KT 9999 -SHSN OVC011 M01/M03 Q1028",
-      "taf": ""
+      "taf": "TAF EFTU 221731Z 2218/2318 07010KT 9999 -SN FEW014 BKN020"
     },
     {
       "icao": "EGBB",
@@ -637,11 +637,11 @@
     {
       "icao": "LATI",
       "alert": "OK",
-      "vis_m": 9999,
+      "vis_m": null,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LATI 221720Z 15004KT CAVOK 08/03 Q1015 NOSIG",
+      "metar": "",
       "taf": "TAF LATI 221700Z 2218/2318 VRB03KT CAVOK TX17/2312Z TN02/2305Z"
     },
     {
@@ -862,7 +862,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR LFSB 221730Z AUTO 35008KT 320V020 2200 BR VV/// 02/02 Q1010 TEMPO 0500 FG",
-      "taf": "TAF LFSB 221100Z 2212/2312 35004KT 9999 BKN007"
+      "taf": "TAF LFSB 221700Z 2218/2318 35006KT 3000 BR OVC003"
     },
     {
       "icao": "LGAV",
@@ -1171,7 +1171,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LMML 221715Z 13004KT 9999 FEW020 15/12 Q1012 NOSIG",
+      "metar": "METAR LMML 221745Z 13003KT 9999 FEW018 14/12 Q1012 NOSIG",
       "taf": "TAF LMML 221700Z 2218/2318 VRB05KT 9999 FEW020"
     },
     {
@@ -1417,22 +1417,22 @@
     {
       "icao": "LWOH",
       "alert": "OK",
-      "vis_m": 9999,
+      "vis_m": null,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LWOH 221720Z 29003KT 9999 BKN040 05/03 Q1017",
-      "taf": "TAF LWOH 221430Z 2215/2315 VRB02KT 9999 SCT040"
+      "metar": "",
+      "taf": "TAF LWOH 221740Z 2218/2318 VRB02KT 9999 BKN040"
     },
     {
       "icao": "LWSK",
       "alert": "OK",
-      "vis_m": 6000,
+      "vis_m": null,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LWSK 221720Z VRB02KT 6000 SCT007 BKN013 04/02 Q1020 NOSIG",
-      "taf": "TAF LWSK 221430Z 2215/2315 VRB02KT 6000 SCT010 BKN030"
+      "metar": "",
+      "taf": "TAF LWSK 221740Z 2218/2318 VRB02KT 7000 BKN007"
     },
     {
       "icao": "LYBE",
