@@ -1,5 +1,5 @@
 {
-  "ts_utc": "2025-12-22T23:37:51Z",
+  "ts_utc": "2025-12-22T23:47:18Z",
   "threshold_m": 150,
   "source": "stations_override.txt (ICAO list) + aviationweather.gov (METAR/TAF raw)",
   "station_count": 159,
@@ -152,7 +152,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR EFTU 222320Z AUTO 06006KT CAVOK M07/M12 Q1033",
-      "taf": "TAF EFTU 222032Z 2221/2321 08010KT 9999 BKN020"
+      "taf": "TAF EFTU 222333Z 2300/2324 07006KT CAVOK"
     },
     {
       "icao": "EGBB",
@@ -597,51 +597,51 @@
     {
       "icao": "HEGN",
       "alert": "OK",
-      "vis_m": null,
+      "vis_m": 9999,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "",
+      "metar": "METAR HEGN 222300Z 26004KT CAVOK 15/12 Q1015 NOSIG",
       "taf": "TAF HEGN 222300Z 2300/2406 29010KT CAVOK"
     },
     {
       "icao": "HEMA",
       "alert": "OK",
-      "vis_m": null,
+      "vis_m": 9999,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "",
+      "metar": "METAR HEMA 222300Z 27005KT CAVOK 18/12 Q1014 NOSIG",
       "taf": "TAF HEMA 222300Z 2300/2406 28010KT CAVOK"
     },
     {
       "icao": "HESH",
       "alert": "OK",
-      "vis_m": null,
+      "vis_m": 9999,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "",
+      "metar": "METAR HESH 222300Z 26005KT CAVOK 18/12 Q1014 NOSIG",
       "taf": "TAF HESH 222300Z 2300/2406 32010KT CAVOK"
     },
     {
       "icao": "HESX",
       "alert": "OK",
-      "vis_m": null,
+      "vis_m": 9999,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "",
+      "metar": "METAR HESX 222300Z 20006KT CAVOK 11/03 Q1015 NOSIG",
       "taf": "TAF HESX 222300Z 2300/2406 23009KT CAVOK"
     },
     {
       "icao": "LATI",
       "alert": "OK",
-      "vis_m": 7000,
+      "vis_m": null,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LATI 222320Z 14003KT 7000 NSC 03/01 Q1016 NOSIG",
+      "metar": "",
       "taf": "TAF LATI 222300Z 2300/2324 VRB05KT CAVOK TX14/2312Z TN02/2302Z"
     },
     {
@@ -1167,11 +1167,11 @@
     {
       "icao": "LMML",
       "alert": "OK",
-      "vis_m": 9999,
+      "vis_m": 5000,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LMML 222315Z 17003KT 9999 FEW018TCU 14/12 Q1012 TEMPO 8000 SHRA",
+      "metar": "METAR LMML 222345Z 20004KT 160V260 5000 SHRA SCT015TCU BKN043 15/13 Q1012 NOSIG",
       "taf": "TAF LMML 222300Z 2300/2324 19008KT 9999 FEW019"
     },
     {
@@ -1427,11 +1427,11 @@
     {
       "icao": "LWSK",
       "alert": "OK",
-      "vis_m": 4000,
+      "vis_m": null,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LWSK 222320Z VRB01KT 4000 BR OVC005 03/02 Q1020 NOSIG",
+      "metar": "",
       "taf": "TAF LWSK 222325Z 2300/2324 VRB02KT 3000 BR OVC005"
     },
     {
