@@ -1,5 +1,5 @@
 {
-  "ts_utc": "2025-12-25T14:35:51Z",
+  "ts_utc": "2025-12-25T14:48:46Z",
   "threshold_m": 150,
   "source": "stations_override.txt (ICAO list) + aviationweather.gov (METAR/TAF raw)",
   "station_count": 159,
@@ -152,7 +152,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR EFTU 251420Z AUTO 30014G25KT CAVOK 05/01 Q1018",
-      "taf": "TAF EFTU 251122Z 2512/2612 28012KT 9999 BKN035"
+      "taf": "TAF EFTU 251429Z 2515/2615 29014KT CAVOK"
     },
     {
       "icao": "EGBB",
@@ -637,11 +637,11 @@
     {
       "icao": "LATI",
       "alert": "OK",
-      "vis_m": 9999,
+      "vis_m": null,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LATI 251420Z 33004KT 9999 BKN082 14/05 Q1018 NOSIG",
+      "metar": "",
       "taf": "TAF LATI 251100Z 2512/2612 VRB05KT 9999 FEW045 BKN090 TX16/2512Z TN03/2601Z"
     },
     {
@@ -1171,7 +1171,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LMML 251415Z 22009KT 180V250 9999 FEW035 18/11 Q1016 NOSIG",
+      "metar": "METAR LMML 251445Z 21010KT 170V240 9999 FEW035 17/10 Q1016 NOSIG",
       "taf": "TAF LMML 251100Z 2512/2612 22012KT 9999 SCT025"
     },
     {
@@ -1417,21 +1417,21 @@
     {
       "icao": "LWOH",
       "alert": "OK",
-      "vis_m": 9999,
+      "vis_m": null,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LWOH 251420Z 34003KT 280V010 9999 FEW020 BKN040 07/04 Q1020",
+      "metar": "",
       "taf": "TAF LWOH 251415Z 2515/2615 34006KT 9999 FEW015 BKN035"
     },
     {
       "icao": "LWSK",
       "alert": "OK",
-      "vis_m": 9999,
+      "vis_m": null,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LWSK 251420Z 02010KT 9999 FEW020 OVC040 05/03 Q1023 NOSIG",
+      "metar": "",
       "taf": "TAF LWSK 251415Z 2515/2615 02008KT 9999 SCT015 OVC040"
     },
     {
@@ -1547,11 +1547,11 @@
     {
       "icao": "UAAA",
       "alert": "OK",
-      "vis_m": 1800,
+      "vis_m": 1500,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR UAAA 251400Z 17003MPS 1800 R05R/P2000 BR OVC100 M01/M05 Q1015 NOSIG",
+      "metar": "METAR UAAA 251430Z VRB01MPS 1500 R05R/P2000 BR OVC100 M01/M05 Q1015 NOSIG",
       "taf": "TAF UAAA 251102Z 2512/2612 22003MPS 3100 BR FU SCT011 OVC030 TX04/2609Z TNM06/2601Z"
     },
     {
@@ -1571,17 +1571,17 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR UDSG 251400Z 18003KT 160V230 9999 OVC036 01/M04 Q1020 NOSIG",
+      "metar": "METAR UDSG 251430Z 19003KT 9999 OVC036 01/M04 Q1020 NOSIG",
       "taf": ""
     },
     {
       "icao": "UDYZ",
       "alert": "OK",
-      "vis_m": 3600,
+      "vis_m": 3300,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR UDYZ 251400Z 00000KT 3600 BR NSC 03/M03 Q1021 NOSIG",
+      "metar": "METAR UDYZ 251430Z 28001KT 3300 BR NSC 02/M03 Q1021 NOSIG",
       "taf": "TAF UDYZ 251100Z 2512/2612 VRB04KT 6000 FEW040"
     },
     {
