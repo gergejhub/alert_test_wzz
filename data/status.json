@@ -1,5 +1,5 @@
 {
-  "ts_utc": "2025-12-28T17:45:12Z",
+  "ts_utc": "2025-12-28T17:52:24Z",
   "threshold_m": 150,
   "source": "stations_override.txt (ICAO list) + aviationweather.gov (METAR/TAF raw)",
   "station_count": 159,
@@ -17,11 +17,11 @@
     {
       "icao": "BKPR",
       "alert": "OK",
-      "vis_m": 9999,
+      "vis_m": null,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR BKPR 281730Z 33008KT CAVOK M00/M05 Q1020 NOSIG",
+      "metar": "",
       "taf": "TAF BKPR 281730Z 2818/2918 35008KT CAVOK"
     },
     {
@@ -137,11 +137,11 @@
     {
       "icao": "EETN",
       "alert": "OK",
-      "vis_m": 9999,
+      "vis_m": 9000,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EETN 281720Z 26005KT 9999 FEW018CB OVC037 00/M03 Q1005 NOSIG",
+      "metar": "METAR EETN 281750Z 26005KT 9000 -SHSN BKN015 FEW020CB 00/M02 Q1005 TEMPO 3000 SHSNRA",
       "taf": "TAF EETN 281730Z 2818/2918 27010KT 9999 BKN025"
     },
     {
@@ -151,7 +151,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EFTU 281720Z AUTO 28007KT 9999 -SHRA BKN027 01/M01 Q1004",
+      "metar": "METAR EFTU 281750Z AUTO 29010KT 9999 -SHRA BKN018 BKN039 02/00 Q1004",
       "taf": "TAF EFTU 281723Z 2818/2918 28008KT 9999 BKN025"
     },
     {
@@ -262,7 +262,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR EKCH 281720Z AUTO 26014KT 9999 OVC017/// 04/01 Q1021 NOSIG",
-      "taf": "TAF EKCH 281727Z 2818/2918 27012KT CAVOK"
+      "taf": ""
     },
     {
       "icao": "ENAL",
@@ -511,7 +511,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EYKA 281720Z 31008KT 250V010 CAVOK 01/M06 Q1010",
+      "metar": "METAR EYKA 281750Z 30007KT 250V030 9999 BKN045 01/M06 Q1010",
       "taf": "TAF EYKA 281701Z 2818/2918 30010KT 9000 SCT030"
     },
     {
@@ -521,7 +521,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EYPA 281720Z VRB10G24KT 9999 FEW015 SCT023 BKN028 04/M01 Q1013",
+      "metar": "METAR EYPA 281750Z 33008G18KT 280V030 9999 SCT027 SCT032 BKN045 04/M01 Q1013",
       "taf": "TAF EYPA 281701Z 2818/2918 31010KT 9000 SCT025"
     },
     {
@@ -531,7 +531,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EYVI 281720Z 33012KT 300V360 9999 SCT033 M02/M06 Q1007 NOSIG",
+      "metar": "METAR EYVI 281750Z 33012KT CAVOK M02/M07 Q1007 NOSIG",
       "taf": "TAF EYVI 281701Z 2818/2918 31012KT 9000 BKN030"
     },
     {
@@ -641,7 +641,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LATI 281720Z VRB02KT CAVOK 06/02 Q1015 NOSIG",
+      "metar": "METAR LATI 281750Z VRB02KT CAVOK 05/01 Q1016 NOSIG",
       "taf": "TAF LATI 281700Z 2818/2918 VRB05KT CAVOK TX15/2912Z TNM01/2905Z"
     },
     {
@@ -1171,7 +1171,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LMML 281715Z 26003KT CAVOK 13/10 Q1019 NOSIG",
+      "metar": "METAR LMML 281745Z 25004KT CAVOK 12/10 Q1019 NOSIG",
       "taf": "TAF LMML 281700Z 2818/2918 29007KT 9999 SCT019"
     },
     {
@@ -1421,8 +1421,8 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LWOH 281720Z 31015KT 290V350 CAVOK 04/M04 Q1015",
-      "taf": ""
+      "metar": "METAR LWOH 281750Z 34009KT CAVOK 03/M05 Q1016",
+      "taf": "TAF LWOH 281750Z 2818/2918 33010KT CAVOK"
     },
     {
       "icao": "LWSK",
@@ -1431,8 +1431,8 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LWSK 281720Z 01007KT 9999 FEW050 03/M06 Q1020 NOSIG",
-      "taf": ""
+      "metar": "METAR LWSK 281750Z 01009KT 9999 FEW050 02/M06 Q1020 NOSIG",
+      "taf": "TAF LWSK 281750Z 2818/2918 01010KT CAVOK"
     },
     {
       "icao": "LYBE",
