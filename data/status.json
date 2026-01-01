@@ -1,5 +1,5 @@
 {
-  "ts_utc": "2026-01-01T23:38:55Z",
+  "ts_utc": "2026-01-01T23:48:30Z",
   "threshold_m": 150,
   "source": "stations_override.txt (ICAO list) + aviationweather.gov (METAR/TAF raw)",
   "station_count": 159,
@@ -152,7 +152,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR EFTU 012320Z AUTO 09017KT 9999 -SN OVC010 M06/M09 Q0982",
-      "taf": "TAF EFTU 012031Z 0121/0221 10018G28KT 9999 BKN014"
+      "taf": ""
     },
     {
       "icao": "EGBB",
@@ -262,7 +262,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR EKCH 012320Z 22018KT 9999 FEW022 03/00 Q0977 TEMPO 23018G28KT",
-      "taf": "TAF EKCH 012327Z 0200/0224 25015KT 9999 BKN030"
+      "taf": "TAF EKCH 012342Z 0200/0224 25015KT 9999 FEW020"
     },
     {
       "icao": "ENAL",
@@ -637,11 +637,11 @@
     {
       "icao": "LATI",
       "alert": "OK",
-      "vis_m": 9999,
+      "vis_m": null,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LATI 012320Z 18006KT CAVOK M02/M09 Q1021 NOSIG",
+      "metar": "",
       "taf": "TAF LATI 012300Z 0200/0224 VRB05KT CAVOK TX11/0212Z TNM00/0203Z"
     },
     {
@@ -812,7 +812,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR LFLL 012330Z 21004KT 170V230 4800 BR NSC M03/M04 Q1012 NOSIG",
-      "taf": ""
+      "taf": "TAF LFLL 012300Z 0200/0306 VRB03KT 6000 NSC"
     },
     {
       "icao": "LFLS",
@@ -1171,7 +1171,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LMML 012315Z VRB01KT 9999 FEW017 12/11 Q1021 RERA NOSIG",
+      "metar": "METAR LMML 012345Z 17008KT 9999 SCT018 13/11 Q1021 NOSIG",
       "taf": "TAF LMML 012300Z 0200/0224 14010KT 9999 SCT025"
     },
     {
