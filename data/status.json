@@ -1,5 +1,5 @@
 {
-  "ts_utc": "2026-01-11T23:36:02Z",
+  "ts_utc": "2026-01-11T23:46:54Z",
   "threshold_m": 150,
   "source": "stations_override.txt (ICAO list) + aviationweather.gov (METAR/TAF raw)",
   "station_count": 159,
@@ -82,7 +82,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR EDDS 112320Z AUTO VRB01KT CAVOK M05/M06 Q1021",
-      "taf": "TAF EDDS 111700Z 1118/1218 18004KT 9999 BKN020"
+      "taf": "TAF EDDS 112300Z 1200/1224 VRB02KT CAVOK"
     },
     {
       "icao": "EDFH",
@@ -92,7 +92,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR EDFH 112320Z 15012KT 8000 BKN004 M03/M04 Q1018",
-      "taf": "TAF EDFH 111700Z 1118/1218 16008KT 8000 BKN005"
+      "taf": "TAF EDFH 112300Z 1200/1224 18010KT 7000 BKN005"
     },
     {
       "icao": "EDJA",
@@ -132,7 +132,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR EDSB 112320Z AUTO VRB01KT 3900 FEW120/// OVC160/// M03/M03 Q1022",
-      "taf": "TAF EDSB 111700Z 1118/1218 08004KT 9999 BKN025"
+      "taf": "TAF EDSB 112300Z 1200/1224 VRB02KT CAVOK"
     },
     {
       "icao": "EETN",
@@ -152,7 +152,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR EFTU 112320Z AUTO 04007KT CAVOK M08/M10 Q1017",
-      "taf": "TAF EFTU 112032Z 1121/1221 03007KT 9999 -SN SCT025"
+      "taf": "TAF EFTU 112331Z 1200/1224 04007KT 9999 FEW020"
     },
     {
       "icao": "EGBB",
@@ -637,11 +637,11 @@
     {
       "icao": "LATI",
       "alert": "OK",
-      "vis_m": 9999,
+      "vis_m": null,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LATI 112320Z 30004KT CAVOK 01/M10 Q1016 NOSIG",
+      "metar": "",
       "taf": "TAF LATI 112300Z 1200/1224 VRB05KT CAVOK TX06/1212Z TNM04/1205Z"
     },
     {
@@ -812,7 +812,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR LFLL 112300Z 16008KT CAVOK 01/M02 Q1022 NOSIG",
-      "taf": ""
+      "taf": "TAF LFLL 112300Z 1200/1306 18007KT CAVOK"
     },
     {
       "icao": "LFLS",
@@ -1171,7 +1171,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LMML 112315Z 29008KT 9999 FEW025 10/05 Q1021 NOSIG",
+      "metar": "METAR LMML 112345Z 28007KT 9999 -SHRA FEW022 SCT045 10/05 Q1021 NOSIG",
       "taf": "TAF LMML 112300Z 1200/1224 31009KT 9999 FEW028"
     },
     {
@@ -1551,7 +1551,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR UAAA 112300Z VRB01MPS 5000 BR FU SCT200 M02/M05 Q1021 NOSIG",
+      "metar": "METAR UAAA 112330Z 00000MPS 5000 BR FU BKN200 M01/M06 Q1021 NOSIG",
       "taf": "TAF UAAA 112301Z 1200/1224 26003G08MPS 6000 SCT050 BKN100 TX07/1209Z TNM03/1201Z"
     },
     {
