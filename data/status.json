@@ -1,5 +1,5 @@
 {
-  "ts_utc": "2026-01-12T11:39:07Z",
+  "ts_utc": "2026-01-12T11:49:52Z",
   "threshold_m": 150,
   "source": "stations_override.txt (ICAO list) + aviationweather.gov (METAR/TAF raw)",
   "station_count": 159,
@@ -152,7 +152,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR EFTU 121120Z AUTO 08007KT 9999 BKN026 M07/M10 Q1019",
-      "taf": "TAF EFTU 120827Z 1209/1309 09007KT 9999 SCT016"
+      "taf": "TAF EFTU 121132Z 1212/1312 09007KT 9999 BKN026"
     },
     {
       "icao": "EGBB",
@@ -362,7 +362,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR EPKK 121130Z 25012KT 9999 BKN029 M05/M10 Q1018",
-      "taf": "TAF EPKK 121108Z 1212/1312 25010KT 9999 SCT026"
+      "taf": "TAF EPKK 121143Z 1212/1312 25010KT 9999 SCT026"
     },
     {
       "icao": "EPKT",
@@ -372,7 +372,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR EPKT 121130Z 24008KT 9999 BKN021 M06/M09 Q1017",
-      "taf": "TAF EPKT 121130Z 1212/1312 28010KT 9999 SCT026"
+      "taf": "TAF EPKT 121145Z 1212/1312 28010KT 9999 SCT026"
     },
     {
       "icao": "EPLB",
@@ -382,7 +382,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR EPLB 121130Z 28006KT 9999 FEW014 M08/M10 Q1015",
-      "taf": "TAF EPLB 120530Z 1206/1306 30008KT 7000 -SN BKN014 BKN025"
+      "taf": "TAF EPLB 121130Z 1212/1312 VRB02KT CAVOK"
     },
     {
       "icao": "EPMO",
@@ -392,7 +392,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR EPMO 121130Z 22004KT 9999 -SN SCT009 BKN018 M04/M07 Q1016",
-      "taf": ""
+      "taf": "TAF EPMO 121130Z 1212/1312 VRB02KT 9999 BKN023"
     },
     {
       "icao": "EPPO",
@@ -402,7 +402,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR EPPO 121130Z 18003KT 9000 NSC M07/M11 Q1018",
-      "taf": "TAF EPPO 121130Z 1212/1312 VRB02KT CAVOK"
+      "taf": "TAF EPPO 121144Z 1212/1312 VRB02KT CAVOK"
     },
     {
       "icao": "EPRA",
@@ -422,7 +422,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR EPRZ 121130Z 28011KT 6000 -SN BKN009 OVC014 M04/M06 Q1016",
-      "taf": "TAF EPRZ 121130Z 1212/1312 30010KT 9999 BKN013"
+      "taf": "TAF EPRZ 121144Z 1212/1312 30010KT 9999 BKN013"
     },
     {
       "icao": "EPSC",
@@ -462,7 +462,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR EPWR 121130Z VRB02KT CAVOK M02/M12 Q1018",
-      "taf": "TAF EPWR 121130Z 1212/1312 VRB02KT CAVOK"
+      "taf": "TAF EPWR 121145Z 1212/1312 VRB02KT CAVOK"
     },
     {
       "icao": "ESGG",
@@ -637,11 +637,11 @@
     {
       "icao": "LATI",
       "alert": "OK",
-      "vis_m": 9999,
+      "vis_m": null,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LATI 121120Z 33010KT CAVOK 05/M08 Q1023 NOSIG",
+      "metar": "",
       "taf": "TAF LATI 121100Z 1212/1312 33012KT CAVOK TX10/1312Z TNM02/1222Z"
     },
     {
@@ -1171,7 +1171,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LMML 121115Z 35010KT 310V020 9999 FEW040 13/04 Q1026 NOSIG",
+      "metar": "METAR LMML 121145Z 35007KT 320V020 9999 FEW040 13/04 Q1026 NOSIG",
       "taf": "TAF LMML 121100Z 1212/1312 35011KT 9999 FEW025"
     },
     {
@@ -1417,21 +1417,21 @@
     {
       "icao": "LWOH",
       "alert": "OK",
-      "vis_m": 9999,
+      "vis_m": null,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LWOH 121120Z 02005KT 320V070 9999 FEW035 M02/M11 Q1020",
+      "metar": "",
       "taf": "TAF LWOH 121111Z 1212/1312 36008KT CAVOK"
     },
     {
       "icao": "LWSK",
       "alert": "OK",
-      "vis_m": 9999,
+      "vis_m": null,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LWSK 121120Z VRB04KT 9999 FEW050 02/M10 Q1023 NOSIG",
+      "metar": "",
       "taf": "TAF LWSK 121111Z 1212/1312 VRB02KT 9999 FEW050"
     },
     {
