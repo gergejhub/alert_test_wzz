@@ -1,5 +1,5 @@
 {
-  "ts_utc": "2026-01-12T17:40:37Z",
+  "ts_utc": "2026-01-12T17:51:35Z",
   "threshold_m": 150,
   "source": "stations_override.txt (ICAO list) + aviationweather.gov (METAR/TAF raw)",
   "station_count": 159,
@@ -17,11 +17,11 @@
     {
       "icao": "BKPR",
       "alert": "OK",
-      "vis_m": null,
+      "vis_m": 9999,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "",
+      "metar": "METAR BKPR 121730Z 31006KT CAVOK M06/M10 Q1022 NOSIG",
       "taf": "TAF BKPR 121730Z 1218/1318 28007KT CAVOK"
     },
     {
@@ -72,7 +72,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR EDDN 121720Z AUTO 12006KT 3600 -SHRA BR OVC005 FEW///CB 01/00 Q1014 RESHRA TEMPO 2500 RADZ OVC004",
-      "taf": "TAF EDDN 121700Z 1218/1318 13006KT 4000 BR OVC006"
+      "taf": ""
     },
     {
       "icao": "EDDS",
@@ -141,7 +141,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EETN 121720Z 08011KT 9999 -SN OVC015 M03/M04 Q1017 TEMPO 5000 SN BKN012",
+      "metar": "METAR EETN 121750Z 08011KT 9999 -SN BKN016 BKN029 M03/M05 Q1017 TEMPO 5000 SN BKN012",
       "taf": "TAF EETN 121730Z 1218/1318 09008KT 9999 SCT015 BKN025"
     },
     {
@@ -152,7 +152,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR EFTU 121720Z AUTO 09005KT CAVOK M09/M10 Q1019",
-      "taf": "TAF EFTU 121426Z 1215/1315 08007KT CAVOK"
+      "taf": "TAF EFTU 121730Z 1218/1318 08007KT CAVOK"
     },
     {
       "icao": "EGBB",
@@ -507,11 +507,11 @@
     {
       "icao": "EYKA",
       "alert": "OK",
-      "vis_m": 4300,
+      "vis_m": 6000,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EYKA 121720Z VRB01KT 4300 BR NSC M16/M18 Q1017",
+      "metar": "METAR EYKA 121750Z 09002KT 6000 NSC M17/M19 Q1017",
       "taf": "TAF EYKA 121704Z 1218/1318 VRB03KT 3000 BR SCT005"
     },
     {
@@ -521,17 +521,17 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EYPA 121720Z 09005KT 9999 OVC038 M09/M10 Q1017",
+      "metar": "METAR EYPA 121750Z 11005KT 9999 FEW037 M09/M10 Q1017",
       "taf": "TAF EYPA 121704Z 1218/1318 VRB05KT 6000 SCT010 BKN030"
     },
     {
       "icao": "EYVI",
       "alert": "OK",
-      "vis_m": 8000,
+      "vis_m": 1400,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EYVI 121720Z 32006KT 8000 -SN OVC004 M12/M14 Q1015 NOSIG",
+      "metar": "METAR EYVI 121750Z 32005KT 280V360 1400 R01/1800VP2000N -SN BR OVC004 M12/M14 Q1015 NOSIG",
       "taf": "TAF EYVI 121704Z 1218/1318 VRB05KT 5000 BR BKN005"
     },
     {
@@ -641,7 +641,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LATI 121720Z VRB02KT CAVOK 01/M08 Q1025 NOSIG",
+      "metar": "METAR LATI 121750Z VRB03KT CAVOK 00/M06 Q1025 NOSIG",
       "taf": "TAF LATI 121700Z 1218/1318 VRB05KT CAVOK TX10/1312Z TNM03/1223Z"
     },
     {
@@ -1171,7 +1171,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LMML 121715Z 27004KT 170V300 CAVOK 09/03 Q1027 NOSIG",
+      "metar": "METAR LMML 121745Z 25004KT CAVOK 09/04 Q1027 NOSIG",
       "taf": "TAF LMML 121700Z 1218/1318 VRB04KT 9999 FEW027"
     },
     {
@@ -1421,7 +1421,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LWOH 121720Z VRB02KT CAVOK M04/M09 Q1022",
+      "metar": "METAR LWOH 121750Z 35003KT 300V030 CAVOK M05/M09 Q1022",
       "taf": "TAF LWOH 121430Z 1215/1315 29006KT 9999 SCT035"
     },
     {
@@ -1431,7 +1431,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LWSK 121720Z 15003KT CAVOK M03/M09 Q1024 NOSIG",
+      "metar": "METAR LWSK 121750Z VRB02KT CAVOK M04/M09 Q1024 NOSIG",
       "taf": "TAF LWSK 121430Z 1215/1315 VRB02KT 9999 FEW050"
     },
     {
