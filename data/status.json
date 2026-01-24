@@ -1,5 +1,5 @@
 {
-  "ts_utc": "2026-01-24T20:46:54Z",
+  "ts_utc": "2026-01-24T20:54:15Z",
   "threshold_m": 150,
   "source": "stations_override.txt (ICAO list) + aviationweather.gov (METAR/TAF raw)",
   "station_count": 159,
@@ -17,11 +17,11 @@
     {
       "icao": "BKPR",
       "alert": "OK",
-      "vis_m": 9999,
+      "vis_m": null,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR BKPR 242030Z 19007KT 9999 BKN055 04/03 Q1011 NOSIG",
+      "metar": "",
       "taf": "TAF BKPR 241730Z 2418/2518 17008KT 9999 BKN040"
     },
     {
@@ -141,7 +141,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EETN 242020Z 08004KT 9999 1500E BR FEW002 M18/M20 Q1025 TEMPO 2000 BKN003",
+      "metar": "METAR EETN 242050Z 07003KT 9999 FEW002 M16/M18 Q1025 TEMPO 1000 BR BKN002",
       "taf": "TAF EETN 241730Z 2418/2518 10005KT 9999 FEW003"
     },
     {
@@ -151,7 +151,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EFTU 242020Z AUTO 13004KT 9999 -SHSN BKN018 M09/M11 Q1024",
+      "metar": "METAR EFTU 242050Z AUTO 12005KT 9999 -SHSN BKN022 M09/M11 Q1024",
       "taf": "TAF EFTU 242027Z 2421/2521 13004KT 9999 BKN018"
     },
     {
@@ -192,7 +192,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR EGKK 242020Z 14011KT 120V180 9999 -RA BKN018 08/06 Q0993",
-      "taf": "TAF EGKK 241656Z 2418/2524 12012KT 9999 FEW025"
+      "taf": ""
     },
     {
       "icao": "EGNM",
@@ -511,7 +511,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EYKA 242020Z 10008KT 9999 -SN OVC022 M10/M13 Q1019",
+      "metar": "METAR EYKA 242050Z 09008KT 060V120 9999 -SN OVC022 M10/M13 Q1019",
       "taf": "TAF EYKA 241707Z 2418/2518 09008KT 8000 OVC025"
     },
     {
@@ -521,7 +521,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EYPA 242020Z 09007KT 9999 SCT023 M12/M15 Q1019",
+      "metar": "METAR EYPA 242050Z 09005KT 9999 OVC026 M11/M15 Q1019",
       "taf": "TAF EYPA 241707Z 2418/2518 VRB05KT 8000 SCT025"
     },
     {
@@ -531,7 +531,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EYVI 242020Z 10008KT 070V130 9999 -SN OVC040 M11/M14 Q1019 NOSIG",
+      "metar": "METAR EYVI 242050Z 10008KT 9999 -SN OVC040 M11/M14 Q1019 NOSIG",
       "taf": "TAF EYVI 241707Z 2418/2518 VRB05KT 8000 BKN025"
     },
     {
@@ -577,11 +577,11 @@
     {
       "icao": "GMMN",
       "alert": "OK",
-      "vis_m": 8000,
+      "vis_m": 4000,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR GMMN 242030Z 30006KT 8000 FEW010 BKN020TCU 10/08 Q1023 NOSIG",
+      "metar": "SPECI GMMN 242044Z 28004KT 4000 RA FEW010 BKN020TCU 10/08 Q1024 NOSIG",
       "taf": "TAF GMMN 241700Z 2418/2524 31016KT 9999 BKN020TCU FEW040CB"
     },
     {
@@ -641,7 +641,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LATI 242020Z 14003KT 9999 BKN068 09/06 Q1011 NOSIG",
+      "metar": "METAR LATI 242050Z 16004KT 9999 BKN066 09/06 Q1012 NOSIG",
       "taf": "TAF LATI 241700Z 2418/2518 VRB05KT 9999 SCT030 BKN060 TX16/2512Z TN08/2505Z"
     },
     {
@@ -1161,7 +1161,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LLBG 242020Z 13004KT 9000 NSC 13/08 Q1020 NOSIG",
+      "metar": "METAR LLBG 242050Z 15004KT 9000 NSC 13/07 Q1020 NOSIG",
       "taf": "TAF LLBG 241717Z 2418/2518 VRB04KT CAVOK"
     },
     {
@@ -1427,11 +1427,11 @@
     {
       "icao": "LWSK",
       "alert": "OK",
-      "vis_m": null,
+      "vis_m": 4000,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "",
+      "metar": "METAR LWSK 242050Z 11001KT 4000 BR BKN025 OVC070 04/03 Q1014 NOSIG",
       "taf": "TAF LWSK 242020Z 2421/2521 VRB02KT 3000 BR BKN025 OVC050"
     },
     {
