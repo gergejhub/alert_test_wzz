@@ -1,5 +1,5 @@
 {
-  "ts_utc": "2026-01-27T21:46:45Z",
+  "ts_utc": "2026-01-27T21:55:04Z",
   "threshold_m": 150,
   "source": "stations_override.txt (ICAO list) + aviationweather.gov (METAR/TAF raw)",
   "station_count": 159,
@@ -17,11 +17,11 @@
     {
       "icao": "BKPR",
       "alert": "OK",
-      "vis_m": 9999,
+      "vis_m": null,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR BKPR 272130Z VRB01KT 9999 FEW050 00/M00 Q1007 NOSIG",
+      "metar": "",
       "taf": "TAF BKPR 271730Z 2718/2818 VRB05KT CAVOK"
     },
     {
@@ -41,17 +41,17 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EDDB 272120Z AUTO 11005KT 070V140 9999 OVC012 M01/M03 Q1001 TEMPO 4000 BR BKN007",
-      "taf": "TAF EDDB 271700Z 2718/2818 07004KT 5000 BR BKN012"
+      "metar": "METAR EDDB 272150Z AUTO 12004KT 9999 OVC013 M01/M02 Q1001 TEMPO 4000 BR BKN007",
+      "taf": ""
     },
     {
       "icao": "EDDH",
       "alert": "OK",
-      "vis_m": 4500,
+      "vis_m": 5000,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EDDH 272120Z AUTO 11008KT 080V140 4500 BR OVC004 00/M00 Q1000 NOSIG",
+      "metar": "METAR EDDH 272150Z AUTO 09010KT 5000 BR OVC004 00/M00 Q1000 TEMPO 4000 OVC005",
       "taf": "TAF EDDH 271700Z 2718/2824 10010KT 9999 BKN008"
     },
     {
@@ -61,17 +61,17 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EDDK 272120Z AUTO 12007KT 9999 -DZ OVC024 04/03 Q0993 NOSIG",
+      "metar": "METAR EDDK 272150Z AUTO 12007KT 080V150 9999 OVC023 04/03 Q0993 NOSIG",
       "taf": "TAF EDDK 271700Z 2718/2824 12009KT 9999 BKN030"
     },
     {
       "icao": "EDDN",
       "alert": "OK",
-      "vis_m": 9000,
+      "vis_m": 9999,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EDDN 272120Z AUTO 11006KT 040V150 9000 SCT041 01/M00 Q0996",
+      "metar": "METAR EDDN 272150Z AUTO 17006KT 9999 -SHRA FEW///CB 01/M00 Q0996",
       "taf": "TAF EDDN 271700Z 2718/2818 10004KT CAVOK"
     },
     {
@@ -81,7 +81,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EDDS 272120Z AUTO 23003KT 190V270 9999 -SHRA FEW028 BKN046 FEW///TCU 04/03 Q0994",
+      "metar": "METAR EDDS 272150Z AUTO 14006KT 110V170 9999 -SHRA FEW005 BKN040 OVC049 FEW///TCU 03/02 Q0994",
       "taf": "TAF EDDS 271700Z 2718/2818 VRB03KT 9999 BKN030"
     },
     {
@@ -141,7 +141,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EETN 272120Z 08009KT 9999 OVC007 M08/M09 Q1014 NOSIG",
+      "metar": "METAR EETN 272150Z 08011KT 9999 OVC008 M08/M09 Q1014 NOSIG",
       "taf": "TAF EETN 271730Z 2718/2818 10008KT 9999 BKN008"
     },
     {
@@ -151,7 +151,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EFTU 272120Z AUTO 07005KT 030V100 9999 OVC003 M11/M12 Q1015",
+      "metar": "METAR EFTU 272150Z AUTO 07006KT 030V090 9999 OVC003 M11/M12 Q1015",
       "taf": "TAF EFTU 272028Z 2721/2821 08006KT 9999 OVC003"
     },
     {
@@ -251,7 +251,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EKBI 272120Z AUTO 08015KT 9999 OVC013/// M00/M03 Q1003",
+      "metar": "METAR EKBI 272150Z AUTO 09016KT 9999 OVC011/// M00/M02 Q1003",
       "taf": "TAF EKBI 272032Z 2721/2821 09014KT 9999 BKN012"
     },
     {
@@ -261,7 +261,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EKCH 272120Z 06010KT 9999 OVC012 M01/M03 Q1006 NOSIG",
+      "metar": "METAR EKCH 272150Z 05011KT 9999 OVC012 M01/M03 Q1006 NOSIG",
       "taf": "TAF EKCH 272027Z 2721/2821 07015KT 9999 OVC016"
     },
     {
@@ -507,11 +507,11 @@
     {
       "icao": "EYKA",
       "alert": "OK",
-      "vis_m": 6000,
+      "vis_m": 5000,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EYKA 272120Z 04004KT 010V070 6000 -SN OVC016 M04/M05 Q1003",
+      "metar": "METAR EYKA 272150Z 04004KT 350V070 5000 -SN BR OVC016 M04/M05 Q1003",
       "taf": "TAF EYKA 271700Z 2718/2818 VRB04KT 5000 SN BR SCT005 OVC015"
     },
     {
@@ -521,17 +521,17 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EYPA 272120Z 08007KT 040V110 9999 -SN BKN027 OVC038 M06/M10 Q1005",
+      "metar": "METAR EYPA 272150Z 07008KT 040V100 9999 OVC028 M06/M10 Q1005",
       "taf": "TAF EYPA 271700Z 2718/2818 06010KT 5000 SN BR BKN020"
     },
     {
       "icao": "EYVI",
       "alert": "OK",
-      "vis_m": 4100,
+      "vis_m": 3700,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EYVI 272120Z 06007KT 4100 -SN BR OVC049 M04/M05 Q1002 NOSIG",
+      "metar": "METAR EYVI 272150Z 05006KT 3700 SN BR OVC046 M04/M05 Q1002 NOSIG",
       "taf": ""
     },
     {
@@ -637,11 +637,11 @@
     {
       "icao": "LATI",
       "alert": "OK",
-      "vis_m": null,
+      "vis_m": 9999,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "",
+      "metar": "METAR LATI 272150Z 18005KT 9999 SCT040 07/03 Q1009 NOSIG",
       "taf": "TAF LATI 271700Z 2718/2818 VRB04KT 9999 FEW035 SCT080 TX15/2811Z TN05/2804Z"
     },
     {
@@ -1161,7 +1161,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LLBG 272120Z 13004KT CAVOK 14/09 Q1013 NOSIG",
+      "metar": "METAR LLBG 272150Z 13004KT CAVOK 14/08 Q1013 NOSIG",
       "taf": "TAF LLBG 271709Z 2718/2818 13005KT CAVOK"
     },
     {
@@ -1431,7 +1431,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LWSK 272120Z VRB01KT CAVOK M00/M01 Q1008 NOSIG",
+      "metar": "METAR LWSK 272150Z VRB02KT CAVOK M01/M01 Q1008 NOSIG",
       "taf": "TAF LWSK 272030Z 2721/2821 VRB02KT CAVOK"
     },
     {
