@@ -1,5 +1,5 @@
 {
-  "ts_utc": "2026-02-22T21:52:57Z",
+  "ts_utc": "2026-02-22T22:00:42Z",
   "threshold_m": 150,
   "source": "stations_override.txt (ICAO list) + aviationweather.gov (METAR/TAF raw)",
   "station_count": 159,
@@ -41,7 +41,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EDDB 222050Z AUTO 27014KT 9999 -RA BKN017 10/09 Q1010 TEMPO 26015G25KT BKN014",
+      "metar": "METAR EDDB 222150Z AUTO 27011KT 9999 FEW014 BKN035 09/08 Q1010 TEMPO 26015G25KT",
       "taf": "TAF EDDB 221700Z 2218/2318 24012KT 9999 SCT010 BKN015"
     },
     {
@@ -51,17 +51,17 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EDDH 222050Z AUTO 26009KT 230V290 9999 BKN011 BKN020 BKN029 07/06 Q1010 TEMPO SCT012",
+      "metar": "METAR EDDH 222150Z AUTO 26007KT 230V290 9999 FEW009 SCT027 OVC036 07/06 Q1010 NOSIG",
       "taf": "TAF EDDH 221700Z 2218/2324 26010KT 9999 OVC008"
     },
     {
       "icao": "EDDK",
       "alert": "OK",
-      "vis_m": 5000,
+      "vis_m": 9999,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EDDK 222050Z AUTO 24006KT 5000 -SHRA BR FEW006 BKN015 FEW///TCU 10/09 Q1016 RESHRA TEMPO 4000 BKN012TCU",
+      "metar": "METAR EDDK 222150Z AUTO 22005KT 190V260 9999 -SHRA SCT012 BKN017 OVC033 FEW///TCU 10/09 Q1016 RESHRA TEMPO BKN012",
       "taf": "TAF EDDK 221700Z 2218/2324 25010KT 9999 BKN015"
     },
     {
@@ -71,7 +71,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EDDN 222050Z AUTO 25011KT 9999 -RA BKN016 10/08 Q1018 TEMPO RA BKN012",
+      "metar": "METAR EDDN 222150Z AUTO 25010KT 9999 -SHRA BKN016 BKN044 FEW///TCU 10/08 Q1018 RESHRA",
       "taf": "TAF EDDN 221700Z 2218/2318 25012KT 9999 BKN020"
     },
     {
@@ -81,7 +81,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EDDS 222050Z AUTO 24010KT 210V270 9999 FEW018 10/07 Q1019 NOSIG",
+      "metar": "METAR EDDS 222150Z AUTO 23007KT 190V280 9999 -SHRA FEW038 FEW///TCU 10/07 Q1019 RESHRA",
       "taf": "TAF EDDS 221700Z 2218/2318 23008KT 9999 BKN030"
     },
     {
@@ -237,21 +237,21 @@
     {
       "icao": "EHEH",
       "alert": "OK",
-      "vis_m": 9999,
+      "vis_m": null,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EHEH 222025Z AUTO 24011KT 220V280 9999 FEW007 BKN010 OVC013 11/10 Q1015 REDZ GRN NOSIG RMK TREND REMOTE BY EHWX",
+      "metar": "",
       "taf": "TAF EHEH 221124Z 2212/2318 24012G22KT 8000 -RA FEW006 BKN008 OVC012"
     },
     {
       "icao": "EKBI",
       "alert": "OK",
-      "vis_m": 1500,
+      "vis_m": 4000,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EKBI 222050Z AUTO 24008KT 1500 BR OVC002/// 04/04 Q1006",
+      "metar": "METAR EKBI 222150Z AUTO 24008KT 210V270 4000 BR OVC002/// 04/04 Q1005",
       "taf": "TAF EKBI 222027Z 2221/2321 25008KT 7000 SCT003 BKN030"
     },
     {
@@ -261,7 +261,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EKCH 222050Z 14002KT 4000 BR RA OVC003 01/01 Q1004 TEMPO 1200 -RA",
+      "metar": "METAR EKCH 222150Z 25005KT 4000 BR -RA OVC003 01/01 Q1005 BECMG 0800 FG",
       "taf": "TAF EKCH 222027Z 2221/2321 17002KT 3000 -RADZ BR BKN004"
     },
     {
@@ -1042,7 +1042,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR LIPQ 222050Z AUTO VRB02KT 9999 FEW140/// BKN170/// 06/05 Q1023",
-      "taf": "TAF LIPQ 221700Z 2218/2318 VRB03KT 8000 FEW035"
+      "taf": ""
     },
     {
       "icao": "LIPR",
