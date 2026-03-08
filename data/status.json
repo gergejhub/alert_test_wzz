@@ -1,5 +1,5 @@
 {
-  "ts_utc": "2026-03-08T21:35:49Z",
+  "ts_utc": "2026-03-08T21:51:00Z",
   "threshold_m": 150,
   "source": "stations_override.txt (ICAO list) + aviationweather.gov (METAR/TAF raw)",
   "station_count": 159,
@@ -231,7 +231,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EHBK 082125Z AUTO 16002KT 7000 NSC 09/07 Q1021 BECMG 4000 BR",
+      "metar": "METAR EHBK 082125Z COR AUTO 16002KT 7000 NSC 09/07 Q1021",
       "taf": "TAF EHBK 081709Z 0818/0924 VRB02KT CAVOK"
     },
     {
@@ -597,41 +597,41 @@
     {
       "icao": "HEGN",
       "alert": "OK",
-      "vis_m": null,
+      "vis_m": 9999,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "",
+      "metar": "METAR HEGN 082100Z 29010KT CAVOK 17/04 Q1017 NOSIG",
       "taf": "TAF HEGN 081700Z 0818/0924 33008G20KT CAVOK"
     },
     {
       "icao": "HEMA",
       "alert": "OK",
-      "vis_m": null,
+      "vis_m": 9999,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "",
+      "metar": "METAR HEMA 082100Z 30011KT CAVOK 18/08 Q1016 NOSIG",
       "taf": "TAF HEMA 081700Z 0818/0924 34008G20KT CAVOK"
     },
     {
       "icao": "HESH",
       "alert": "OK",
-      "vis_m": null,
+      "vis_m": 9999,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "",
+      "metar": "METAR HESH 082100Z 34013KT CAVOK 19/02 Q1016 NOSIG",
       "taf": "TAF HESH 081700Z 0818/0924 35006G18KT CAVOK"
     },
     {
       "icao": "HESX",
       "alert": "OK",
-      "vis_m": null,
+      "vis_m": 9999,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "",
+      "metar": "METAR HESX 082100Z 03007KT CAVOK 12/07 Q1020 NOSIG",
       "taf": "TAF HESX 081700Z 0818/0924 35007KT CAVOK"
     },
     {
@@ -641,7 +641,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LATI 082120Z 34003KT 310V010 9999 -RA OVC072 12/08 Q1025 NOSIG",
+      "metar": "METAR LATI 082150Z VRB02KT 9999 -RA FEW042 OVC070 12/08 Q1025 NOSIG",
       "taf": "TAF LATI 081700Z 0818/0918 VRB04KT 9999 SCT080 TX17/0912Z TN08/0905Z"
     },
     {
@@ -1171,7 +1171,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LMML 082115Z 07014KT 9999 BKN013 15/13 Q1022 NOSIG",
+      "metar": "METAR LMML 082145Z 08014KT 9999 SCT014 15/13 Q1022 NOSIG",
       "taf": "TAF LMML 081700Z 0818/0918 09015KT 9999 SCT013"
     },
     {
@@ -1431,7 +1431,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LWSK 082120Z 12005KT 080V140 9999 FEW050 BKN080 11/06 Q1027 NOSIG",
+      "metar": "METAR LWSK 082150Z 13005KT 090V150 9999 FEW050 BKN090 11/06 Q1027 NOSIG",
       "taf": "TAF LWSK 082030Z 0821/0921 VRB02KT 9999 SCT050 BKN080"
     },
     {
@@ -1547,11 +1547,11 @@
     {
       "icao": "UAAA",
       "alert": "OK",
-      "vis_m": 4000,
+      "vis_m": 5000,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR UAAA 082100Z 17001MPS 4000 BR FU FEW100 BKN200 04/00 Q1017 NOSIG",
+      "metar": "METAR UAAA 082130Z VRB01MPS 5000 BR FU SCT100 OVC200 04/01 Q1016 NOSIG",
       "taf": "TAF UAAA 081704Z 0818/0918 17003MPS 3100 BR FU SCT050 BKN100 TX16/0909Z TN02/0902Z"
     },
     {
@@ -1571,7 +1571,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR UDSG 082100Z 36012KT 9999 BKN049 M04/M10 Q1020 NOSIG",
+      "metar": "METAR UDSG 082130Z 35012KT 9999 BKN049 M04/M10 Q1020 NOSIG",
       "taf": "TAF UDSG 081658Z 0818/0918 VRB06KT 9999 BKN040"
     },
     {
@@ -1581,7 +1581,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR UDYZ 082100Z 06004KT 9999 SCT046 00/M04 Q1020 NOSIG",
+      "metar": "METAR UDYZ 082130Z 07002KT 9999 SCT046 00/M03 Q1020 NOSIG",
       "taf": ""
     },
     {
