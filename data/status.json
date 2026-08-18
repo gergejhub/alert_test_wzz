@@ -1,5 +1,5 @@
 {
-  "ts_utc": "2026-08-18T23:38:36Z",
+  "ts_utc": "2026-08-18T23:54:42Z",
   "threshold_m": 150,
   "source": "stations_override.txt (ICAO list) + aviationweather.gov (METAR/TAF raw)",
   "station_count": 159,
@@ -17,11 +17,11 @@
     {
       "icao": "BKPR",
       "alert": "OK",
-      "vis_m": 9999,
+      "vis_m": null,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR BKPR 182330Z VRB01KT CAVOK 17/10 Q1015 NOSIG",
+      "metar": "",
       "taf": "TAF BKPR 182330Z 1900/1924 VRB05KT CAVOK"
     },
     {
@@ -141,7 +141,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EETN 182320Z 28007KT 9999 FEW015 SCT049 13/11 Q1000",
+      "metar": "METAR EETN 182350Z 29005KT 9999 FEW016 13/11 Q1000",
       "taf": "TAF EETN 182330Z 1900/1924 29010KT 9999 SCT015 FEW035"
     },
     {
@@ -151,8 +151,8 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EFTU 182320Z AUTO 27003KT 9999 0550 R26/0650 NCD 07/07 Q1001",
-      "taf": ""
+      "metar": "METAR EFTU 182350Z AUTO 25002KT 9999 1100 R26/P2000D NCD 07/07 Q1001",
+      "taf": "TAF EFTU 182334Z 1900/1924 28003KT CAVOK"
     },
     {
       "icao": "EGBB",
@@ -511,7 +511,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EYKA 182320Z AUTO 29003KT 9999 NCD 12/12 Q1003",
+      "metar": "METAR EYKA 182350Z AUTO 26003KT 9999 NCD 11/11 Q1003",
       "taf": "TAF EYKA 182320Z 1900/1924 25005KT 5000 BR OVC002"
     },
     {
@@ -521,17 +521,17 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EYPA 182250Z AUTO VRB01KT 9999 NCD 13/12 Q1003",
+      "metar": "METAR EYPA 182350Z AUTO 17002KT 9999 NCD 12/12 Q1003",
       "taf": "TAF EYPA 182308Z 1900/1924 VRB03KT 6000 BKN025"
     },
     {
       "icao": "EYVI",
       "alert": "OK",
-      "vis_m": 750,
+      "vis_m": 7000,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR EYVI 182320Z 28004KT 0750 R01/1100U FG VV002 12/12 Q1004 NOSIG",
+      "metar": "METAR EYVI 182350Z 27003KT 7000 OVC002 12/12 Q1004 TEMPO 1500 BR",
       "taf": "TAF EYVI 182324Z 1900/1924 26006KT 5000 BR OVC002"
     },
     {
@@ -637,11 +637,11 @@
     {
       "icao": "LATI",
       "alert": "OK",
-      "vis_m": 7000,
+      "vis_m": 9999,
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LATI 182320Z 15002KT 7000 NSC 23/20 Q1011 NOSIG",
+      "metar": "METAR LATI 182350Z 16001KT CAVOK 23/20 Q1012 NOSIG",
       "taf": "TAF LATI 182300Z 1900/1924 VRB03KT CAVOK TX35/1912Z TN19/1904Z"
     },
     {
@@ -1112,7 +1112,7 @@
       "metar_trigger": false,
       "taf_trigger": false,
       "metar": "METAR LIRP 182315Z 14003KT CAVOK 22/21 Q1012 NOSIG",
-      "taf": "TAF LIRP 181700Z 1818/1918 29008KT CAVOK"
+      "taf": "TAF LIRP 182300Z 1900/1924 VRB03KT CAVOK"
     },
     {
       "icao": "LIRZ",
@@ -1171,7 +1171,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LMML 182315Z 36009KT CAVOK 28/25 Q1012 NOSIG",
+      "metar": "METAR LMML 182345Z 02010KT 9999 FEW015 28/25 Q1012 NOSIG",
       "taf": "TAF LMML 182300Z 1900/1924 05010KT 9999 FEW025"
     },
     {
@@ -1421,7 +1421,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LWOH 182320Z 29003KT CAVOK 15/12 Q1015",
+      "metar": "METAR LWOH 182350Z 34005KT CAVOK 14/12 Q1015",
       "taf": "TAF LWOH 182305Z 1900/1924 33006KT 9999 FEW040 SCT090"
     },
     {
@@ -1431,7 +1431,7 @@
       "fzfg": false,
       "metar_trigger": false,
       "taf_trigger": false,
-      "metar": "METAR LWSK 182320Z COR 24003KT 200V290 CAVOK 21/11 Q1013 NOSIG",
+      "metar": "METAR LWSK 182350Z VRB02KT CAVOK 20/13 Q1013 NOSIG",
       "taf": "TAF LWSK 182305Z 1900/1924 VRB02KT 9999 SCT090"
     },
     {
